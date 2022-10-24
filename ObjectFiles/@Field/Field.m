@@ -143,7 +143,7 @@ classdef Field < handle
                     R2=exp(1i*thisField.DispersionCoefficients(2)*((thisField.FrequencyVector*2*pi).^3)/6);
                     R3=exp(1i*dispersionCoefficients(3)*((thisField.FrequencyVector*2*pi).^4)/24);
                     for j=1:thisField.Size(1)
-                        A1(j,:) =  A1(j,:).*R.*R2;  
+                        A1(j,:) =  A1(j,:).*R.*R2.*R3;  
                     end  
                     a1 = 1/thisField.Size(2)*fftshift(DF*fft(fftshift(A1,2),thisField.Size(2),2),2);           
                     thisField.InitialSpectrum=A1(1,:);

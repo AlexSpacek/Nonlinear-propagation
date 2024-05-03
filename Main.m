@@ -38,7 +38,7 @@ vacuum1=Material('Vacuum',length,splitsteps,runge_kutta_steps,n2,field{1}.Wavele
 GDD = -1200*1e-30;
 TOD = 2400*1e-45;
 FOD = 0;
-compression1=Dispersion('compression1',-1200*1e-30,2400*1e-45,0);
+compression1=Dispersion('compression1',GDD,TOD,FOD);
 
 
 OpticalPath1={fusedSilica1,lens1,compression1,vacuum1};
